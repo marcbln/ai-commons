@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "ai-commons"
 version = "0.1.0"
@@ -10,7 +14,7 @@ dependencies = [
     "PyYAML>=6.0.1",
     "typing-extensions",
 ]
-requires-python = "^3.9"
+requires-python = ">=3.9,<4.0"
 
 [project.optional-dependencies]
 dev = [
@@ -19,12 +23,7 @@ dev = [
     "pytest-mock",
 ]
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.package-data]
-ai_commons = ["data/model-aliases.yaml"]
-
 [tool.pytest.ini_options]
 pythonpath = "src"
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_commons"]
