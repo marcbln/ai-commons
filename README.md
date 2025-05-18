@@ -1,3 +1,4 @@
+![Minimalist AI Logo](Minimalist AI Logo Design.png)
 # ai-commons
 
 Shared Python library for interacting with Large Language Models (LLMs). Provides a common interface for different providers and handles configuration like model aliases and API keys.
@@ -7,11 +8,11 @@ Shared Python library for interacting with Large Language Models (LLMs). Provide
 
 To run the tests for the `ai-commons` library, follow these steps:
 
-1.  **Install Poetry** (if not already installed):
+1.  **Install `uv`** (if not already installed):
     ```bash
-    curl -sSL https://install.python-poetry.org | python3 -
+    curl -sSL https://uv.rs/install.sh | sh
     ```
-    *(Note: Ensure Poetry's bin directory is in your PATH after installation)*
+    *(Note: Ensure `uv` is in your PATH after installation)*
 
 2.  **Navigate to the project root**:
     ```bash
@@ -21,10 +22,10 @@ To run the tests for the `ai-commons` library, follow these steps:
 
 3.  **Install dependencies** (including development dependencies):
     ```bash
-    poetry install
+    uv pip install -r requirements.txt
     ```
 
-4.  **Run tests** using pytest (managed by Poetry):
+4.  **Run tests** using pytest (managed by `uv`):
     ```bash
-    poetry run pytest tests/
+    uv run pytest tests/
     ```

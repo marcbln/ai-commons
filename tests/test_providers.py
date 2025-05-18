@@ -155,9 +155,9 @@ def test_openai_create_completion_no_client():
 
 @pytest.mark.parametrize("openai_exception", [
     openai.APIError("API error", request=None, body=None),
-    openai.RateLimitError("Rate limit"),
+    openai.RateLimitError("Rate limit", response=None, body=None),
     openai.APIConnectionError(request=None),
-    openai.InvalidRequestError("Invalid request", param=None, code=None),
+    openai.InvalidRequestError("Invalid request", param=None, code=None, response=None, body=None),
 ])
 def test_openai_create_completion_api_errors(mocker, mock_openai_client, openai_exception):
     """Tests wrapping various openai API errors in APIRequestError."""
